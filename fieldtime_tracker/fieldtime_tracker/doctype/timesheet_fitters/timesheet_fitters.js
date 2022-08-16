@@ -28,18 +28,21 @@ frappe.ui.form.on('Timesheet Fitters', {
 	},
 	break_time:function(frm){
 		//stat
+		frm.get_projects_hours(frm);
 		frm.get_total_hours(frm);
 		
 		frm.refresh_field();
 	},
 	travel_time:function(frm){
 		//stat
+		frm.get_projects_hours(frm);
 		frm.get_total_hours(frm);
 		
 		frm.refresh_field();
 	},
 	driver_time:function(frm){
 		//stat
+		frm.get_projects_hours(frm);
 		frm.get_total_hours(frm);
 		
 		frm.refresh_field();
@@ -65,6 +68,7 @@ frappe.ui.form.on("Hours Fitters Project", {
 
 
 		frm.get_projects_hours(frm);
+		frm.get_total_hours(frm);
 		
 		frm.refresh_field('time_logs');
 	},

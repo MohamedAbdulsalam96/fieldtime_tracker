@@ -39,6 +39,7 @@
    "options": "Hours Fitters Project"
   },
   {
+   "default": "0",
    "fieldname": "break_time",
    "fieldtype": "Float",
    "label": "Break Time",
@@ -53,6 +54,8 @@
    "reqd": 1
   },
   {
+   "default": "0",
+   "depends_on": "eval:doc.expense_type==\"Arrival or Departure\";",
    "fieldname": "travel_time",
    "fieldtype": "Float",
    "label": "Travel Time",
@@ -61,6 +64,8 @@
    "reqd": 1
   },
   {
+   "default": "0",
+   "depends_on": "eval:doc.expense_type==\"Arrival or Departure\";",
    "fieldname": "driver_time",
    "fieldtype": "Float",
    "label": "Driver Time",
@@ -84,7 +89,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-16 06:24:08.319616",
+ "modified": "2022-08-16 15:08:57.614967",
  "modified_by": "Administrator",
  "module": "Fieldtime Tracker",
  "name": "Timesheet Fitters",
