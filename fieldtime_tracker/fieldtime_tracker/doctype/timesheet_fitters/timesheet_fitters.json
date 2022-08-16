@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-16 02:41:18.957384",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "date",
+  "time_logs",
+  "break_time",
+  "expense_type",
+  "travel_time",
+  "driver_time",
+  "total_work_time"
+ ],
+ "fields": [
+  {
+   "default": "user_fullname",
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "User",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_logs",
+   "fieldtype": "Table",
+   "label": "Time Sheet",
+   "options": "Hours Fitters Project"
+  },
+  {
+   "fieldname": "break_time",
+   "fieldtype": "Float",
+   "label": "Break Time",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expense_type",
+   "fieldtype": "Select",
+   "label": "Expense Type",
+   "options": "Arrival or Departure\nWhole Day",
+   "reqd": 1
+  },
+  {
+   "fieldname": "travel_time",
+   "fieldtype": "Float",
+   "label": "Travel Time",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "driver_time",
+   "fieldtype": "Float",
+   "label": "Driver Time",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_work_time",
+   "fieldtype": "Float",
+   "label": "Total Work Time",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-16 02:46:15.124865",
+ "modified_by": "Administrator",
+ "module": "Fieldtime Tracker",
+ "name": "Timesheet Fitters",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
