@@ -2,9 +2,7 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Timesheet Fitters', {
-	// refresh: function(frm) {
-
-	// }
+	
 	setup: function(frm){
 
 		frm.get_projects_hours = function(frm){
@@ -25,6 +23,17 @@ frappe.ui.form.on('Timesheet Fitters', {
 			
 			
 		}
+	},
+	refresh: function(frm) {
+		
+		if(frm.is_new()){ 
+			//&& !cur_frm.is_dirty()
+
+			//frm.set_df_property("expense_type", "options", []);//clear all options
+			cur_frm.set_value("expense_type", "Whole Day");
+			frm.set_value("expense_value",28);
+		}
+
 	},
 	break_time:function(frm){
 		//stat
@@ -47,6 +56,15 @@ frappe.ui.form.on('Timesheet Fitters', {
 		
 		frm.refresh_field();
 	},
+	expense_type: function(frm){		
+		if (frm.doc.expense_type =="Arrival or Departure"){
+			frm.set_value("expense_value",14);
+		}
+		if (frm.doc.expense_type =="Whole Day"){
+			frm.set_value("expense_value",28);
+		}
+
+	}
 
 });
 
@@ -68,9 +86,10 @@ frappe.ui.form.on("Hours Fitters Project", {
 
 
 		frm.get_projects_hours(frm);
+		frm.refresh_field('time_logs');
 		frm.get_total_hours(frm);
 		
-		frm.refresh_field('time_logs');
+		
 	},
 
 	hours_spend: function(frm, cdt, cdn) {

@@ -14,7 +14,8 @@
   "travel_time",
   "driver_time",
   "total_project_time",
-  "total_work_time"
+  "total_work_time",
+  "expense_value"
  ],
  "fields": [
   {
@@ -85,11 +86,17 @@
    "hidden": 1,
    "label": "Total Project Time",
    "read_only": 1
+  },
+  {
+   "fieldname": "expense_value",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Expense Value"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-16 15:08:57.614967",
+ "modified": "2022-08-17 15:24:08.146349",
  "modified_by": "Administrator",
  "module": "Fieldtime Tracker",
  "name": "Timesheet Fitters",
